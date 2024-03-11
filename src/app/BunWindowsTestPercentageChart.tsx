@@ -71,11 +71,19 @@ const data: Series[] = [
 	},
 ];
 
-export function BunWindowsPercentageChart() {
+export function BunWindowsPercentageChart({
+	initialHeight,
+	initialWidth,
+}: {
+	initialHeight?: number;
+	initialWidth?: number;
+}) {
 	return (
 		<Chart
 			options={{
 				data,
+				initialHeight,
+				initialWidth,
 				primaryAxis: {
 					primaryAxisId: "date",
 					getValue: (datum) => datum.date,
