@@ -1,9 +1,12 @@
-import { env } from "@/env.mjs";
+import { BunWindowsPercentageChart } from "./BunWindowsTestPercentageChart";
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<p>Write code now! {env.VERCEL_URL ?? "No Vercel URL"}</p>
+		<main className="flex h-screen w-screen flex-col items-center justify-center">
+			<h1 className="pb-4 text-3xl">Bun for Windows test %</h1>
+			<div className="h-full w-full">
+				<BunWindowsPercentageChart />
+			</div>
 		</main>
 	);
 }
