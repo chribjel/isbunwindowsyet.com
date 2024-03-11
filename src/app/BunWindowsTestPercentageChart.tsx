@@ -101,6 +101,12 @@ export function BunWindowsPercentageChart({
 				data,
 				initialHeight,
 				initialWidth,
+				onClickDatum: (datum) => {
+					window.open(
+						`https://twitter.com/chribjel/status/${datum?.originalDatum.tweetId}`,
+						"_blank"
+					);
+				},
 				primaryAxis,
 				secondaryAxes,
 				tooltip: {
