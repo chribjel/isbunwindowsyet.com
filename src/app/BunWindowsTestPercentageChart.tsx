@@ -103,7 +103,7 @@ export function BunWindowsPercentageChart({
 				initialWidth,
 				onClickDatum: (datum) => {
 					window.open(
-						`https://twitter.com/chribjel/status/${datum?.originalDatum.tweetId}`,
+						`https://twitter.com/bunjavascript/status/${datum?.originalDatum.tweetId}`,
 						"_blank"
 					);
 				},
