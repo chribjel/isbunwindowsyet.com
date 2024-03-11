@@ -1,5 +1,4 @@
 import { ImageResponse } from "next/og";
-import { BunWindowsPercentageChart } from "./BunWindowsTestPercentageChart";
 
 export default function OpengraphImage() {
 	const height = 630;
@@ -7,10 +6,27 @@ export default function OpengraphImage() {
 
 	return new ImageResponse(
 		(
-			<BunWindowsPercentageChart
-				initialHeight={height}
-				initialWidth={width}
-			/>
+			<div
+				style={{
+					alignItems: "center",
+					backgroundColor: "white",
+					display: "flex",
+					height: "100%",
+					justifyContent: "center",
+					width: "100%",
+				}}
+			>
+				<h1
+					style={{
+						color: "black",
+						fontSize: "48px",
+						fontWeight: "bold",
+						textAlign: "center",
+					}}
+				>
+					Is Bun for Windows yet?
+				</h1>
+			</div>
 		),
 		{
 			height,

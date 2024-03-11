@@ -1,4 +1,5 @@
 "use client";
+import { useMemo } from "react";
 import { Chart } from "react-charts";
 import { Tweet } from "react-tweet";
 
@@ -78,21 +79,30 @@ export function BunWindowsPercentageChart({
 	initialHeight?: number;
 	initialWidth?: number;
 }) {
+	const primaryAxis = useMemo(
+		() => ({
+			getValue: (datum: BunWindowsPercentage) => datum.date,
+		}),
+		[]
+	);
+
+	const secondaryAxes = useMemo(
+		() => [
+			{
+				getValue: (datum: BunWindowsPercentage) => datum.percentage,
+			},
+		],
+		[]
+	);
+
 	return (
 		<Chart
 			options={{
 				data,
 				initialHeight,
 				initialWidth,
-				primaryAxis: {
-					primaryAxisId: "date",
-					getValue: (datum) => datum.date,
-				},
-				secondaryAxes: [
-					{
-						getValue: (datum) => datum.percentage,
-					},
-				],
+				primaryAxis,
+				secondaryAxes,
 				tooltip: {
 					render: (props) => (
 						<Tweet
