@@ -1,6 +1,6 @@
 "use client";
 import { useMemo } from "react";
-import { Chart } from "react-charts";
+import { Chart, type AxisOptions } from "react-charts";
 import { Tweet } from "react-tweet";
 
 type BunWindowsPercentage = {
@@ -80,16 +80,18 @@ export function BunWindowsPercentageChart({
 	initialWidth?: number;
 }) {
 	const primaryAxis = useMemo(
-		() => ({
+		(): AxisOptions<BunWindowsPercentage> => ({
 			getValue: (datum: BunWindowsPercentage) => datum.date,
 		}),
 		[]
 	);
 
 	const secondaryAxes = useMemo(
-		() => [
+		(): AxisOptions<BunWindowsPercentage>[] => [
 			{
 				getValue: (datum: BunWindowsPercentage) => datum.percentage,
+				hardMax: 100,
+				hardMin: 0,
 			},
 		],
 		[]
