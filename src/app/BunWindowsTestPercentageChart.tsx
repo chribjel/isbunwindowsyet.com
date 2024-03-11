@@ -106,12 +106,12 @@ export function BunWindowsPercentageChart({
 				data,
 				initialHeight,
 				initialWidth,
-				onClickDatum: (datum) => {
-					window.open(
-						`https://twitter.com/bunjavascript/status/${datum?.originalDatum.tweetId}`,
-						"_blank"
-					);
-				},
+				// onClickDatum: (datum) => {
+				// 	window.open(
+				// 		`https://twitter.com/bunjavascript/status/${datum?.originalDatum.tweetId}`,
+				// 		"_blank"
+				// 	);
+				// },
 				primaryAxis,
 				secondaryAxes,
 				tooltip: {
