@@ -7,7 +7,7 @@ import { env } from "@/env.mjs";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Bun Windows test %",
+	title: "Is Bun Windows Yet?",
 	description: "How many percentage of the tests pass for Bun for Windows?",
 	metadataBase:
 		env.VERCEL_ENV === "production"
