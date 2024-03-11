@@ -1,0 +1,31 @@
+{
+	"extends": ["next/core-web-vitals", "prettier"],
+	"plugins": ["import", "n"],
+	"rules": {
+		"import/newline-after-import": "error",
+		"import/no-duplicates": "error",
+		"import/order": "error",
+		"import/no-default-export": "error",
+		"no-unused-vars": "warn",
+		"n/no-process-env": "error"
+	},
+	"overrides": [
+		{
+			// Next.js needs default exports in standard files
+			"files": [
+				"next.config.mjs",
+				"src/**/*(page|layout|loading|opengraph-image).tsx",
+				"src/**/*(robots|sitemap|manifest|middleware).ts"
+			],
+			"rules": {
+				"import/no-default-export": "off"
+			}
+		},
+		{
+			"files": ["src/env.mjs"],
+			"rules": {
+				"n/no-process-env": "off"
+			}
+		}
+	]
+}
