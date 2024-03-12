@@ -76,6 +76,11 @@ export function BunWindowsPercentageChart({
 						percentage: 91,
 						tweetId: "1767211079405375625",
 					},
+					{
+						date: new Date("2024-03-12"),
+						percentage: 92.51,
+						tweetId: "1767644565581017580",
+					},
 				],
 			},
 		],
