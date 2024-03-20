@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { BunWindowsPercentageChart } from "./BunWindowsTestPercentageChart";
+import { data } from "./data";
 
 export default function Home() {
 	return (
 		<main className="flex h-screen w-screen flex-col items-center justify-center">
 			<h1 className="py-4 text-3xl">Is Bun Windows Yet?</h1>
 			<div className="h-full w-full">
-				<BunWindowsPercentageChart />
+				<BunWindowsPercentageChart data={data} />
 			</div>
 			<footer className="flex w-full justify-between p-8 text-sm text-gray-600">
 				<Link
