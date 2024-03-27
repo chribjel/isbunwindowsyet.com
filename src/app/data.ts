@@ -80,4 +80,9 @@ export const data: BunWindowsPercentage[] = [
 		percentage: 96,
 		tweetId: "1772362220992631250",
 	},
+	{
+		date: new Date("2024-03-27"),
+		percentage: 97,
+		tweetId: "1773040762667573444",
+	},
 ];
