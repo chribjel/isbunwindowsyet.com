@@ -66,12 +66,10 @@ export function BunWindowsPercentageChart({
 					primaryAxis,
 					secondaryAxes,
 					tooltip: {
-						render: (props) => (
-							<Tweet
-								id={props.focusedDatum?.originalDatum.tweetId}
-								apiUrl={undefined}
-							/>
-						),
+						render: (props) =>
+							props.focusedDatum ? (
+								<Tweet id={props.focusedDatum.originalDatum.tweetId} />
+							) : null,
 					},
 				}}
 			/>

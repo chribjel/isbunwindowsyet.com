@@ -24,7 +24,7 @@ export default function OpengraphImage() {
 						textAlign: "center",
 					}}
 				>
-					Is Bun for Windows yet?
+					Is Bun Windows Yet?
 				</h1>
 			</div>
 		),

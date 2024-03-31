@@ -28,7 +28,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={cn(inter.className, "flex h-svh w-full flex-col")}>
 				{children}
-				<footer className="flex w-full flex-col items-center justify-center gap-2 p-8 text-sm text-gray-600 sm:flex-row sm:gap-8">
+				<footer className="flex w-full flex-col items-center justify-center gap-2 p-2 text-sm text-gray-600 sm:flex-row sm:gap-8">
 					<Link
 						className="font-bold hover:text-purple-600"
 						href="https://x.com/chribjel"
