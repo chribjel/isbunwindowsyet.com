@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export function BundowsCountdown(props: { releaseDate: Date }) {
 	const [timeLeft, setTimeLeft] = useState(() => {
@@ -19,12 +19,18 @@ export function BundowsCountdown(props: { releaseDate: Date }) {
 		return () => clearInterval(interval);
 	}, [props.releaseDate]);
 
-	const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-	const hours = Math.floor(
-		(timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-	);
-	const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-	const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+	const calculateTime = useCallback(() => {
+		const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+		const hours = Math.floor(
+			(timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+		);
+		const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+		const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+		return { days, hours, minutes, seconds };
+	}, [timeLeft]); // Add timeLeft as a dependency
+
+	const { days, hours, minutes, seconds } = calculateTime();
 
 	return (
 		<div className="relative flex gap-2">
