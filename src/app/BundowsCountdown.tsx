@@ -20,12 +20,16 @@ export function BundowsCountdown(props: { releaseDate: Date }) {
 	}, [props.releaseDate]);
 
 	const calculateTime = useCallback(() => {
-		const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+		let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
 		const hours = Math.floor(
 			(timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
 		);
 		const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
 		const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+		if (timeLeft < 24 * 60 * 60 * 1000) {
+			days = 0;
+		}
 
 		return { days, hours, minutes, seconds };
 	}, [timeLeft]); // Add timeLeft as a dependency
