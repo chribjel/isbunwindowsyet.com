@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { BunWindowsPercentageChart } from "./BunWindowsTestPercentageChart";
 import { data } from "./data";
-import { BundowsCountdown } from "./BundowsCountdown";
 
 export default async function Home() {
 	const bundowsRelease = {
@@ -20,14 +19,6 @@ export default async function Home() {
 		<>
 			<main className="flex h-full w-full flex-col items-center justify-center px-2">
 				<h1 className="py-4 text-3xl">Is Bun Windows Yet?</h1>
-				<Link
-					className="flex flex-col items-center justify-center"
-					href={`https://x.com/i/status/${bundowsRelease.tweetId}`}
-					target="_blank"
-				>
-					<BundowsCountdown releaseDate={bundowsRelease.date} />
-					<span className="text-xs">(click me for source)</span>
-				</Link>
 				<Link
 					className="pt-2 font-bold"
 					href={`https://twitter.com/i/status/${lastDataPoint.tweetId}`}
